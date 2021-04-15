@@ -44,6 +44,12 @@ class LoginFormController: UIViewController {
         }
     }
     
+    @IBAction func signOut(_ seg: UIStoryboardSegue){
+        self.loginTextField.text = ""
+        self.passwordTextField.text = ""
+    
+    }
+    
     
 }
 
