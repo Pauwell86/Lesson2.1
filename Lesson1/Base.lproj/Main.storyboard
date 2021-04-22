@@ -20,8 +20,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nS-80-C4D">
                                 <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-eB-gRu">
-                                        <rect key="frame" x="179" y="20" width="70" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyVk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-eB-gRu">
+                                        <rect key="frame" x="145.66666666666666" y="20" width="136.99999999999997" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
                                         <color key="highlightedColor" systemColor="linkColor"/>
@@ -65,7 +65,6 @@
                                         </connections>
                                     </switch>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70482262207579294" green="0.77547201633860485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Kf1-7c-jVO" firstAttribute="top" secondItem="wmk-4U-RTF" secondAttribute="bottom" constant="10" id="0H1-4Q-F9Z"/>
                                     <constraint firstItem="wmk-4U-RTF" firstAttribute="top" secondItem="W9K-eB-gRu" secondAttribute="bottom" constant="100" id="6AB-gi-Jyn"/>
@@ -108,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign in Form" id="vYa-EK-bfj"/>
                     <connections>
+                        <outlet property="gradientScrollView" destination="1nS-80-C4D" id="JJd-I2-qGQ"/>
                         <outlet property="loginTextField" destination="Kf1-7c-jVO" id="aNk-QR-rnm"/>
                         <outlet property="passwordTextField" destination="d7f-rl-aRC" id="7du-Zi-RiY"/>
                         <segue destination="Pax-TM-9BJ" kind="show" identifier="fromFirstPageToSecondSegue" id="Fbu-QF-o5g"/>
@@ -191,7 +191,7 @@
         <scene sceneID="JTw-Vf-fSX">
             <objects>
                 <tableViewController id="duZ-lu-9cd" customClass="FriendsTableViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Mn-N0-gim">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Mn-N0-gim">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -218,6 +218,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="428" height="926"/>
                     <connections>
                         <segue destination="aOv-ad-9eK" kind="show" identifier="fromFriendsToFriendSegue" id="dBE-XK-Gje"/>
                     </connections>
@@ -235,7 +236,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" sectionInsetReference="safeArea" id="bBx-8Z-wuh">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="bBx-8Z-wuh">
                             <size key="itemSize" width="400" height="400"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -245,7 +246,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cU5-21-ypp">
                                 <rect key="frame" x="14" y="0.0" width="400" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7z0-s5-jZr">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5t9-s7-N3L">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>

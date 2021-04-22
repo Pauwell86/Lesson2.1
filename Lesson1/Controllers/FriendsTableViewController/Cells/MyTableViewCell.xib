@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,10 +13,22 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTableViewCell" id="KGk-i7-Jjw" customClass="MyTableViewCell" customModule="VK" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="CustomCellView" customModule="VK" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-Mj-W8N">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="160"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1I-aY-Lgh">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="S1I-aY-Lgh" secondAttribute="height" multiplier="1:1" id="Lfs-4r-pGu"/>
+                        </constraints>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lTc-gB-B0j">
                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                         <constraints>
@@ -25,13 +38,13 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-El-3yq">
                         <rect key="frame" x="49" y="0.0" width="271" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d33-C6-kkz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d33-C6-kkz">
                                 <rect key="frame" x="0.0" y="0.0" width="271" height="20"/>
                                 <fontDescription key="fontDescription" name="NotoNastaliqUrdu-Bold" family="Noto Nastaliq Urdu" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-HO-pIe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-HO-pIe">
                                 <rect key="frame" x="0.0" y="24" width="271" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -42,8 +55,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="lTc-gB-B0j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6Iv-Z8-liy"/>
+                    <constraint firstItem="S1I-aY-Lgh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7aj-LC-3Bl"/>
+                    <constraint firstAttribute="bottom" secondItem="S1I-aY-Lgh" secondAttribute="bottom" id="JuQ-MM-PNJ"/>
                     <constraint firstAttribute="bottom" secondItem="lTc-gB-B0j" secondAttribute="bottom" id="LUp-Le-gfU"/>
                     <constraint firstItem="Ndj-El-3yq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nlr-SD-3Ql"/>
+                    <constraint firstItem="S1I-aY-Lgh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Reb-20-Dhk"/>
                     <constraint firstItem="lTc-gB-B0j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Z9d-St-lSE"/>
                     <constraint firstAttribute="trailing" secondItem="Ndj-El-3yq" secondAttribute="trailing" id="bpa-nF-3uo"/>
                     <constraint firstItem="Ndj-El-3yq" firstAttribute="leading" secondItem="lTc-gB-B0j" secondAttribute="trailing" constant="5" id="nas-Ig-070"/>
@@ -53,10 +69,17 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="ageLabel" destination="VQ0-HO-pIe" id="p0b-Kf-VN4"/>
+                <outlet property="cellView" destination="8ab-Mj-W8N" id="eNZ-N2-olU"/>
                 <outlet property="myImage" destination="lTc-gB-B0j" id="8K6-Us-XdT"/>
+                <outlet property="myView" destination="S1I-aY-Lgh" id="wCA-7l-kGS"/>
                 <outlet property="nameLabel" destination="d33-C6-kkz" id="g4i-U7-m4M"/>
             </connections>
             <point key="canvasLocation" x="139" y="56"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

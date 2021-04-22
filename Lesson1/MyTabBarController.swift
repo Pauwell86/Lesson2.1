@@ -37,6 +37,7 @@ class MyTabBarController: UITabBarController {
         DataStorage.shared.myFriendsArray = usersArray
         DataStorage.shared.allGroups = groupsArray
         
+        
     }
     
 

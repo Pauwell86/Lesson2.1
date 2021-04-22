@@ -13,14 +13,27 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var gradientScrollView: UIScrollView!
+    
+
+    
     let fromFirstPageToSecondSegue = "fromFirstPageToSecondSegue"
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
+        
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [UIColor.white.cgColor, UIColor.blue.cgColor]
+//        gradientLayer.locations = [0, 1]
+//        gradientLayer.startPoint = CGPoint.zero
+//        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+//        gradientLayer.frame = gradientScrollView.bounds
+//        
+//        gradientScrollView.layer.addSublayer(gradientLayer)
+        
+        }
 
     
     @IBAction func switchFillLogun(_ sender: Any) {
