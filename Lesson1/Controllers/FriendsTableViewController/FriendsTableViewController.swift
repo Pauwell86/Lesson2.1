@@ -59,8 +59,10 @@ class FriendsTableViewController: UITableViewController {
         guard let cell = tableView.cellForRow(at: indexPath) as? MyTableViewCell,
               let user = cell.saveUser
         else {return}
-                
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        
+        cell.animeAvatar()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.performSegue(withIdentifier: self.fromFriendsToFriendSegue, sender: user)
         }
     
@@ -70,7 +72,7 @@ class FriendsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == fromFriendsToFriendSegue {
             guard let user = sender as? User,
-                  let destenation = segue.destination as? FotoCollectionViewController
+                  let destenation = segue.destination as? AnimatePicsController
             else { return }
             destenation.user = user
         }

@@ -100,21 +100,24 @@ class MyTableViewCell: UITableViewCell {
     }
     
 
-    @IBAction func pressButton(_ sender: Any) {
+//    @IBAction func pressButton(_ sender: Any) {
     
-    let anime = CASpringAnimation(keyPath: "trabform.scale")
-        anime.fromValue = 0.7
+func animeAvatar() {
+    let anime = CASpringAnimation(keyPath: "transform.scale")
+        anime.fromValue = 0.8
         anime.toValue = 1
-        anime.stiffness = 200
-        anime.mass = 2
-        anime.duration = 1
-        anime.fillMode = CAMediaTimingFillMode.backwards
-        anime.autoreverses = true
+        anime.stiffness = 500
+        anime.mass = 10
+        anime.duration = 2
     
         myImage.layer.add(anime, forKey: nil)
+        myView.layer.add(anime, forKey: nil)
         
+    
         
 //        UIView.animate(withDuration: 2,
+//                       delay: 0,
+//                       options: .autoreverse,
 //                       animations: {self.myImage.frame.origin.x += 100},
 //                       completion: nil)
   

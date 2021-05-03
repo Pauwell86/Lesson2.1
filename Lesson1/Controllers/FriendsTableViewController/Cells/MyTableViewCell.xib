@@ -52,28 +52,18 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sew-IO-fFC">
-                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                        <connections>
-                            <action selector="pressButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="a2W-nl-5Qx"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="lTc-gB-B0j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6Iv-Z8-liy"/>
                     <constraint firstItem="S1I-aY-Lgh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7aj-LC-3Bl"/>
-                    <constraint firstItem="Sew-IO-fFC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DUp-w7-5kE"/>
                     <constraint firstAttribute="bottom" secondItem="S1I-aY-Lgh" secondAttribute="bottom" id="JuQ-MM-PNJ"/>
                     <constraint firstAttribute="bottom" secondItem="lTc-gB-B0j" secondAttribute="bottom" id="LUp-Le-gfU"/>
                     <constraint firstItem="Ndj-El-3yq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nlr-SD-3Ql"/>
                     <constraint firstItem="S1I-aY-Lgh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Reb-20-Dhk"/>
                     <constraint firstItem="lTc-gB-B0j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Z9d-St-lSE"/>
                     <constraint firstAttribute="trailing" secondItem="Ndj-El-3yq" secondAttribute="trailing" id="bpa-nF-3uo"/>
-                    <constraint firstItem="Sew-IO-fFC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fRc-zn-Qvg"/>
-                    <constraint firstItem="Ndj-El-3yq" firstAttribute="leading" secondItem="Sew-IO-fFC" secondAttribute="trailing" constant="5" id="kun-GU-Ctg"/>
                     <constraint firstItem="Ndj-El-3yq" firstAttribute="leading" secondItem="lTc-gB-B0j" secondAttribute="trailing" constant="5" id="nas-Ig-070"/>
                     <constraint firstAttribute="bottom" secondItem="Ndj-El-3yq" secondAttribute="bottom" id="sQd-Zl-rGk"/>
-                    <constraint firstAttribute="bottom" secondItem="Sew-IO-fFC" secondAttribute="bottom" id="thI-b3-vDC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
