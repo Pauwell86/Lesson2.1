@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00317932633FF940030E226 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00317922633FF940030E226 /* CustomView.swift */; };
+		C00F52E9263695B400A75D32 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F52E8263695B400A75D32 /* NewsTableViewController.swift */; };
+		C00F52EF263695D100A75D32 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F52ED263695D100A75D32 /* NewsTableViewCell.swift */; };
+		C00F52F0263695D100A75D32 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00F52EE263695D100A75D32 /* NewsTableViewCell.xib */; };
+		C00F52F32636BB2900A75D32 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F52F22636BB2900A75D32 /* News.swift */; };
 		C0376E8C262774D800EFF117 /* FotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0376E8B262774D800EFF117 /* FotoCollectionViewController.swift */; };
 		C0376E942627780600EFF117 /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0376E922627780600EFF117 /* FotoCollectionViewCell.swift */; };
 		C0376E952627780600EFF117 /* FotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0376E932627780600EFF117 /* FotoCollectionViewCell.xib */; };
@@ -29,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C00317922633FF940030E226 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		C00F52E8263695B400A75D32 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		C00F52ED263695D100A75D32 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		C00F52EE263695D100A75D32 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		C00F52F22636BB2900A75D32 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		C0376E8B262774D800EFF117 /* FotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewController.swift; sourceTree = "<group>"; };
 		C0376E922627780600EFF117 /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0376E932627780600EFF117 /* FotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -63,9 +73,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C00F52E62636955F00A75D32 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				C00F52E8263695B400A75D32 /* NewsTableViewController.swift */,
+				C00F52E72636957000A75D32 /* Cells */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		C00F52E72636957000A75D32 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C00F52ED263695D100A75D32 /* NewsTableViewCell.swift */,
+				C00F52EE263695D100A75D32 /* NewsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C02BA5C326275F1400D14C49 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C00F52E62636955F00A75D32 /* NewsController */,
 				C0F004C72628A8FA005BF2A8 /* AllGroupController */,
 				C0F004C32628A138005BF2A8 /* MyGroupController */,
 				C0376E8F2627779A00EFF117 /* FotoCollectionViewController */,
@@ -115,6 +144,7 @@
 			children = (
 				C06EF3A52625E6A90022C2DA /* User.swift */,
 				C06EF3AA2625E8040022C2DA /* Group.swift */,
+				C00F52F22636BB2900A75D32 /* News.swift */,
 				C06EF3AD2625EA220022C2DA /* DataStorage.swift */,
 			);
 			path = Model;
@@ -146,6 +176,7 @@
 				C0B0C47A2618833100C08D7A /* Main.storyboard */,
 				C06EF3A0262578B10022C2DA /* MyTabBarController.swift */,
 				C06EF3B8262743870022C2DA /* SetUp.swift */,
+				C00317922633FF940030E226 /* CustomView.swift */,
 				C02BA5C326275F1400D14C49 /* Controllers */,
 				C0B0C47D2618833700C08D7A /* Assets.xcassets */,
 				C0B0C47F2618833700C08D7A /* LaunchScreen.storyboard */,
@@ -231,6 +262,7 @@
 				C0B0C4812618833700C08D7A /* LaunchScreen.storyboard in Resources */,
 				C0B0C47E2618833700C08D7A /* Assets.xcassets in Resources */,
 				C0376E952627780600EFF117 /* FotoCollectionViewCell.xib in Resources */,
+				C00F52F0263695D100A75D32 /* NewsTableViewCell.xib in Resources */,
 				C0B0C47C2618833100C08D7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00317932633FF940030E226 /* CustomView.swift in Sources */,
 				C06EF3AB2625E8040022C2DA /* Group.swift in Sources */,
 				C0F004C92628A932005BF2A8 /* AllGroupController.swift in Sources */,
 				C0F004C52628A17C005BF2A8 /* MyGroupController.swift in Sources */,
@@ -253,7 +286,10 @@
 				C0376E942627780600EFF117 /* FotoCollectionViewCell.swift in Sources */,
 				C0B0C4752618833100C08D7A /* AppDelegate.swift in Sources */,
 				C0376E8C262774D800EFF117 /* FotoCollectionViewController.swift in Sources */,
+				C00F52F32636BB2900A75D32 /* News.swift in Sources */,
+				C00F52E9263695B400A75D32 /* NewsTableViewController.swift in Sources */,
 				C06EF3B9262743870022C2DA /* SetUp.swift in Sources */,
+				C00F52EF263695D100A75D32 /* NewsTableViewCell.swift in Sources */,
 				C06EF39D262479ED0022C2DA /* FriendsTableViewController.swift in Sources */,
 				C0B0C4772618833100C08D7A /* SceneDelegate.swift in Sources */,
 			);

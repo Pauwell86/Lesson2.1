@@ -14,6 +14,7 @@ class FriendsTableViewController: UITableViewController {
     
     var myFriendsDict = [String: [User]]()
     var myFriendsSectionTitles = [String]()
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,10 @@ class FriendsTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: friendTableViewCellReuse)
         
         createMyFriendsDict()
+        
     }
+    
+ 
 
     // MARK: - Table view data source
 
@@ -30,8 +34,18 @@ class FriendsTableViewController: UITableViewController {
         return myFriendsSectionTitles.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return myFriendsSectionTitles[section]
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = CustomLabel()
+        view.text = myFriendsSectionTitles[section]
+        view.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+        
+
+        return view
+    }
+        
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return myFriendsSectionTitles
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,10 +59,14 @@ class FriendsTableViewController: UITableViewController {
         guard let cell = tableView.cellForRow(at: indexPath) as? MyTableViewCell,
               let user = cell.saveUser
         else {return}
-        
-        performSegue(withIdentifier: fromFriendsToFriendSegue, sender: user)
+                
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.performSegue(withIdentifier: self.fromFriendsToFriendSegue, sender: user)
+        }
+    
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == fromFriendsToFriendSegue {
             guard let user = sender as? User,
@@ -75,9 +93,9 @@ class FriendsTableViewController: UITableViewController {
         return 100
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
-    }
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 100
+//    }
     
     func createMyFriendsDict() {
         for friend in DataStorage.shared.myFriendsArray {

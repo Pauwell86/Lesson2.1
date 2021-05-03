@@ -10,7 +10,7 @@ import UIKit
 class MyTabBarController: UITabBarController {
     
     func fillUsersArray() {
-        
+        // Создаю друзей
         let user1 = setNewUser(userNumber: 1, userName: "Вова", userAge: 68)
         let user2 = setNewUser(userNumber: 2, userName: "Джо", userAge: 78)
         let user3 = setNewUser(userNumber: 3, userName: "Анжела", userAge: 66)
@@ -19,6 +19,7 @@ class MyTabBarController: UITabBarController {
         
         let usersArray = [user1, user2, user3, user4, user5]
         
+        // Создаю группы
         let group1 = Group(name: "Пиво всему голова!",
                            discription: "Группа любителей пива. История. Сорта. Отзывы.",
                            groupImage: UIImage(named: "Пиво"))
@@ -34,8 +35,19 @@ class MyTabBarController: UITabBarController {
         
         let groupsArray = [group1, group2, group3, group4]
         
+        // Создаю новости
+        let news1 = News(newsTtitle: "Ты не поверишь! Магазин колясок закрывается",
+                         newsImage: UIImage(named: "магазин"))
+        let news2 = News(newsTtitle: "Ты не поверишь! Компания Gillette тестирует свою продукцию на животных. Правозащитники в шоке!",
+                         newsImage: UIImage(named: "gillette"))
+        let news3 = News(newsTtitle: "Ты не поверишь! Умер принц Филипп. Королева II замечена в Tinder",
+                         newsImage: UIImage(named: "королева"))
+        
+        let newsArray = [news1, news2, news3]
+        
         DataStorage.shared.myFriendsArray = usersArray
         DataStorage.shared.allGroups = groupsArray
+        DataStorage.shared.newsGroups = newsArray
         
         
     }

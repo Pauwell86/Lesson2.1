@@ -19,4 +19,6 @@ class DataStorage: NSObject {
     var allGroups = [Group]()
     var myFavoriteGroups = [Group]()
     
+    var newsGroups = [News]()
+    
 }
