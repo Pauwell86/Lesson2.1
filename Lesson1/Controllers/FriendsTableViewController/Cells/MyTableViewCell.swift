@@ -43,6 +43,20 @@ class MyTableViewCell: UITableViewCell {
 
     }
     
+   override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.white.cgColor]
+        gradientLayer.locations = [0, 0.6]
+        gradientLayer.startPoint = CGPoint.zero
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.frame = contentView.frame
+
+        cellView.layer.addSublayer(gradientLayer)
+    }
+    
+    
     func configureWithUser(user: User) {
         nameLabel.text = user.name
         
@@ -56,20 +70,10 @@ class MyTableViewCell: UITableViewCell {
 
         }
         
-        
         myView.layer.cornerRadius = 50
         myView.layer.shadowColor = UIColor.white.cgColor
         myView.layer.shadowRadius = 20
         myView.layer.shadowOpacity = 0.9
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.white.cgColor]
-        gradientLayer.locations = [0, 0.6]
-        gradientLayer.startPoint = CGPoint.zero
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
-        gradientLayer.frame = cellView.bounds
-
-        cellView.layer.addSublayer(gradientLayer)
 
         saveUser = user
     
@@ -106,20 +110,12 @@ func animeAvatar() {
     let anime = CASpringAnimation(keyPath: "transform.scale")
         anime.fromValue = 0.8
         anime.toValue = 1
-        anime.stiffness = 500
-        anime.mass = 10
-        anime.duration = 2
+        anime.stiffness = 300
+        anime.mass = 5
+    anime.duration = 1
     
         myImage.layer.add(anime, forKey: nil)
         myView.layer.add(anime, forKey: nil)
-        
-    
-        
-//        UIView.animate(withDuration: 2,
-//                       delay: 0,
-//                       options: .autoreverse,
-//                       animations: {self.myImage.frame.origin.x += 100},
-//                       completion: nil)
   
     }
     

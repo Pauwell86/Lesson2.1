@@ -2,23 +2,28 @@
 //  FriendsTableViewController.swift
 //  VK
 //
-//  Created by Pauwell on 12.04.2021.
+//  Created by Pauwell on 10.05.2021.
 //
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UINavigationControllerDelegate {
     
     let fromFriendsToFriendSegue = "fromFriendsToFriendSegue"
     let friendTableViewCellReuse = "MyTableViewCell"
+   
+    @IBOutlet weak var myTableView: UITableView!
+    
+    let interactiveTransition = InteractiveTransitionClass()
+
     
     var myFriendsDict = [String: [User]]()
     var myFriendsSectionTitles = [String]()
-    
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.delegate = self
         self.tableView.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: friendTableViewCellReuse)
         
         createMyFriendsDict()
@@ -62,10 +67,10 @@ class FriendsTableViewController: UITableViewController {
         
         cell.animeAvatar()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.performSegue(withIdentifier: self.fromFriendsToFriendSegue, sender: user)
         }
-    
+        
     }
     
 
@@ -80,6 +85,7 @@ class FriendsTableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: friendTableViewCellReuse, for: indexPath) as? MyTableViewCell else {return UITableViewCell()}
+        
 
         let myFriendKey = myFriendsSectionTitles[indexPath.section]
         if let myFriendValues = myFriendsDict[myFriendKey] {
@@ -119,6 +125,24 @@ class FriendsTableViewController: UITableViewController {
         
     }
     
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        if operation == .push {
+            self.interactiveTransition.viewController = toVC
+            return PushAnimation()
+        }
+        else if operation == .pop {
+            if navigationController.viewControllers.first != toVC {
+                self.interactiveTransition.viewController = toVC
+            }
+            return PopAnimation()
+        }
+        return nil
+    }
     
-    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+
+        return interactiveTransition.isStarted ? interactiveTransition : nil
+
+    }
 }

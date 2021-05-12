@@ -14,3 +14,4 @@ struct User {
     var avatar: UIImage?
     var fotoArray = [UIImage]()
 }
+

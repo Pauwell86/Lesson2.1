@@ -13,9 +13,8 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var gradientScrollView: UIScrollView!
-    
-
+    @IBOutlet weak var gradientView: UIView!
+        
     
     let fromFirstPageToSecondSegue = "fromFirstPageToSecondSegue"
     
@@ -29,12 +28,12 @@ class LoginFormController: UIViewController {
 //        gradientLayer.locations = [0, 1]
 //        gradientLayer.startPoint = CGPoint.zero
 //        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-//        gradientLayer.frame = gradientScrollView.bounds
-//        
-//        gradientScrollView.layer.addSublayer(gradientLayer)
-        
-        
-        }
+//        gradientLayer.frame = gradientView.bounds
+//
+//        gradientView.layer.addSublayer(gradientLayer)
+//
+//
+       }
 
     
     @IBAction func switchFillLogun(_ sender: Any) {
@@ -46,6 +45,7 @@ class LoginFormController: UIViewController {
     @IBAction func pressSignButton(_ sender: UIButton) {
         if self.loginTextField.text == "admin",
            self.passwordTextField.text == "123456" {
+            
             performSegue(withIdentifier: fromFirstPageToSecondSegue, sender: self)
         } else {
             let alert = UIAlertController(title: "Error", message: "Entered wrong login or password", preferredStyle: .alert)
@@ -63,6 +63,7 @@ class LoginFormController: UIViewController {
         self.passwordTextField.text = ""
     
     }
+    
     
     
 }
