@@ -15,13 +15,23 @@ class LoginFormController: UIViewController {
     
     @IBOutlet weak var gradientView: UIView!
         
+    @IBOutlet weak var firstPoint: UIView!
+    @IBOutlet weak var secondPoint: UIView!
+    @IBOutlet weak var thirdPoint: UIView!
     
     let fromFirstPageToSecondSegue = "fromFirstPageToSecondSegue"
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstPoint.layer.cornerRadius = 5
+        secondPoint.layer.cornerRadius = 5
+        thirdPoint.layer.cornerRadius = 5
+        firstPoint.alpha = 0
+        secondPoint.alpha = 0
+        thirdPoint.alpha = 0
         
 //        let gradientLayer = CAGradientLayer()
 //        gradientLayer.colors = [UIColor.white.cgColor, UIColor.blue.cgColor]
@@ -41,30 +51,80 @@ class LoginFormController: UIViewController {
         passwordTextField.text = "123456"
     }
    
-    
-    @IBAction func pressSignButton(_ sender: UIButton) {
-        if self.loginTextField.text == "admin",
-           self.passwordTextField.text == "123456" {
-            
-            performSegue(withIdentifier: fromFirstPageToSecondSegue, sender: self)
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Entered wrong login or password", preferredStyle: .alert)
-            
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alert.addAction(action)
-            
-            present(alert, animated: true, completion: nil)
-        }
-    }
-    
     @IBAction func signOut(_ seg: UIStoryboardSegue){
         self.loginTextField.text = ""
         self.passwordTextField.text = ""
     
     }
     
+    @IBAction func pressSignButton(_ sender: UIButton) {
+        if self.loginTextField.text == "admin",
+           self.passwordTextField.text == "123456" {
+            
+            UIView.animate(withDuration: 0.2,
+                           delay: 0,
+                           options: [.autoreverse],
+                           animations: {[weak self] in
+                            self?.firstPoint.alpha = 1
+                           },
+                           completion:{_ in
+                            self.firstPoint.alpha = 0
+                            UIView.animate(withDuration: 0.2,
+                                           delay: 0,
+                                           options: [.autoreverse],
+                                           animations: {[weak self] in
+                                            self?.secondPoint.alpha = 1
+                                           },
+                                           completion:{_ in
+                                            self.secondPoint.alpha = 0
+                                            UIView.animate(withDuration: 0.2,
+                                                           delay: 0,
+                                                           options: [.autoreverse],
+                                                           animations: {[weak self] in
+                                                            self?.thirdPoint.alpha = 1
+                                                           },
+                                                           completion:{_ in
+                                                            self.thirdPoint.alpha = 0
+                                                            UIView.animate(withDuration: 0.2,
+                                                                           delay: 0,
+                                                                           options: [.autoreverse],
+                                                                           animations: {[weak self] in
+                                                                            self?.firstPoint.alpha = 1
+                                                                           },
+                                                                           completion:{_ in
+                                                                            self.firstPoint.alpha = 0
+                                                                            UIView.animate(withDuration: 0.2,
+                                                                                           delay: 0,
+                                                                                           animations: {[weak self] in
+                                                                                            self?.secondPoint.alpha = 0.5
+                                                                                           },
+                                                                                           completion:{_ in
+                                                                                            self.secondPoint.alpha = 0
+                                                                                            self.performSegue(withIdentifier: self.fromFirstPageToSecondSegue, sender: self)
+                                      })
+                                 })
+                          })
+                    })
+           })
+            
+            
+
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Entered wrong login or password", preferredStyle: .alert)
+
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+
+            alert.addAction(action)
+
+            present(alert, animated: true, completion: nil)
+        }
     
     
-}
+
+    
+    
+    
+        }
+    }
 
